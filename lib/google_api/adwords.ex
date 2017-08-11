@@ -12,10 +12,10 @@ defmodule GoogleApi.Adwords do
   end
 
   def report_with_awql(client, query) do
-    GoogleApi.Report.report_with_awql(client, token(), query)
+    GoogleApi.Report.report_with_awql(client, access_token(), query)
   end
 
-  defp token do
+  defp access_token do
     GoogleApi.Auth.get_token(:adwords)
   end
 

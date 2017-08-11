@@ -17,7 +17,12 @@ defmodule GoogleApi.Report do
       {"skipColumnHeader", "true"},
     ]
 
-    HTTPoison.post!(client.report_url, body, headers).body
+    options = [
+      recv_timeout: :infinity,
+      async: :once
+    ]
+
+    HTTPoison.post!(client.report_url, body, headers, options)
   end
 
 end
