@@ -28,6 +28,6 @@ defmodule GoogleApi.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [{:oauth2, "~> 0.9"},
-     {:poison, "~> 3.1"}]
+     {:poison, "~> 2.0"}]
   end
 end
