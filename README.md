@@ -5,7 +5,7 @@ A Work In progress Google Api Client for access google services with Elixir :hea
 Available Features:
 
 - OAuth2 Authentication
-- Reports with AWQL
+- Reports for AdWords with AWQL
 
 Desired Features
 
