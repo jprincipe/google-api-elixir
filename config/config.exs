@@ -24,7 +24,7 @@ use Mix.Config
 # example values
 config :google_api, :oauth2,
   client_id: "172345676919-ff89g1d3e4off4gf31bbpo3plhcvbmfp.apps.googleusercontent.com",
-  client_secret: "3TfikwcyVwhPoIuECX3NMH9x",
+  client_secret: "3TfikwcyVwhPoIuECX3NMH9x"
 
 # It is also possible to import configuration files, relative to this
 # directory. For example, you can emulate configuration per environment
