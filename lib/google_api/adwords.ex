@@ -11,8 +11,8 @@ defmodule GoogleApi.Adwords do
     }
   end
 
-  def report_with_awql(client, query) do
-    GoogleApi.Report.report_with_awql(client, access_token(), query)
+  def csv_report_with_awql(client, query) do
+    GoogleApi.Report.csv_report_with_awql(client, access_token(), query)
   end
 
   defp access_token do

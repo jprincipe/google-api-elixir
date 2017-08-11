@@ -1,6 +1,6 @@
 defmodule GoogleApi.Report do
 
-  def report_with_awql(client, access_token, query) do
+  def csv_report_with_awql(client, access_token, query) do
     body = [
       __rdquery: query,
       __fmt: "CSV"
@@ -9,7 +9,7 @@ defmodule GoogleApi.Report do
     headers = [
       {"Content-Type", "application/x-www-form-urlencoded"},
       {"Authorization", "Bearer #{access_token}"},
-      {"User-Agent", "QueroBolsa (AwApi-Ruby/0.22.0, Common-Ruby/0.12.6, GoogleAdsSavon/1.0.2, ruby/2.3.1, HTTPI/2.4.2, httpclient)"},
+      {"User-Agent", "#{client.user_agent} (GoogleApiElixir/0.1.0, httpclient)"},
       {"clientCustomerId", client.client_customer_id},
       {"developerToken", client.developer_token},
       {"skipReportHeader", "true"},
@@ -18,11 +18,10 @@ defmodule GoogleApi.Report do
     ]
 
     options = [
-      recv_timeout: :infinity,
-      async: :once
+      recv_timeout: :infinity
     ]
 
-    HTTPoison.post!(client.report_url, body, headers, options)
+    byte_size(HTTPoison.post!(client.report_url, body, headers, options).body)
   end
 
 end
