@@ -22,11 +22,9 @@ use Mix.Config
 #
 
 # example values
-config :google_api, :oauth_2,
+config :google_api, :oauth2,
   client_id: "172345676919-ff89g1d3e4off4gf31bbpo3plhcvbmfp.apps.googleusercontent.com",
   client_secret: "3TfikwcyVwhPoIuECX3NMH9x",
-  refresh_token: "1/QLaGGnROTCtYSf7k-JvWdE4o5nnrloykcP3K-wehSiNIgOrJDtdun6zK6XiAKYBR"
-
 
 # It is also possible to import configuration files, relative to this
 # directory. For example, you can emulate configuration per environment

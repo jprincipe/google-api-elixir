@@ -9,7 +9,7 @@ defmodule GoogleApi.Setup do
       token_url:      "https://accounts.google.com/o/oauth2/token",
       authorize_url:  "https://accounts.google.com/o/oauth2/auth",
       params: %{
-        scope:        scope,
+        scope:        Application.get_env(:google_api, scope)[:scope],
       }
     ])
 
