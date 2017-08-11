@@ -12,8 +12,10 @@ defmodule GoogleApi.Setup do
         scope:        Application.get_env(:google_api, scope)[:scope],
       }
     ])
-
+    IO.puts "======================================================="
+    IO.puts "Here goes your link: \n"
     IO.puts OAuth2.Client.authorize_url!(client)
+    IO.puts "\n=======================================================\n\n"
     client
   end
 

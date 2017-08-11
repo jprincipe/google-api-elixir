@@ -1,6 +1,6 @@
-# GoogleApi
+# GoogleApi Elixir
 
-A Work In progress Google Api Client for access google services with Elixir <3
+A Work In progress Google Api Client for access google services with Elixir :heart:
 
 Available Features:
 
