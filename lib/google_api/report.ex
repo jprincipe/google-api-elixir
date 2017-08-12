@@ -1,9 +1,18 @@
 defmodule GoogleApi.Report do
+  alias NimbleCSV.RFC4180, as: CSV
 
   def csv_report_with_awql(client, access_token, query) do
+    {:ok, pid} = StringIO.open(report_with_awql(client, access_token, query, "CSV").body)
+
+    IO.stream(pid, :line) |>
+    CSV.parse_stream
+  end
+
+
+  def report_with_awql(client, access_token, query, format) do
     body = [
       __rdquery: query,
-      __fmt: "CSV"
+      __fmt: format
     ] |> URI.encode_query
 
     headers = [
@@ -21,7 +30,7 @@ defmodule GoogleApi.Report do
       recv_timeout: :infinity
     ]
 
-    byte_size(HTTPoison.post!(client.report_url, body, headers, options).body)
+    HTTPoison.post!(client.report_url, body, headers, options)
   end
 
 end

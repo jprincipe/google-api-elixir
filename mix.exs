@@ -29,6 +29,7 @@ defmodule GoogleApi.Mixfile do
   defp deps do
     [{:oauth2, "~> 0.9"},
      {:poison, "~> 2.0"},
-     {:httpoison, "~> 0.9"}]
+     {:httpoison, "~> 0.9"},
+     {:nimble_csv, "~> 0.1.0"}]
   end
 end
