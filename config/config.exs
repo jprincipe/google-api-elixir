@@ -22,9 +22,9 @@ use Mix.Config
 #
 
 # example values
-config :google_api, :oauth2,
-  client_id: "172345676919-ff89g1d3e4off4gf31bbpo3plhcvbmfp.apps.googleusercontent.com",
-  client_secret: "3TfikwcyVwhPoIuECX3NMH9x"
+# config :google_api, :oauth2,
+#   client_id: "172345676919-ff89g1d3e4off4gf31bbpo3plhcvbmfp.apps.googleusercontent.com",
+#   client_secret: "3TfikwcyVwhPoIuECX3NMH9x"
 
 # It is also possible to import configuration files, relative to this
 # directory. For example, you can emulate configuration per environment
@@ -33,3 +33,15 @@ config :google_api, :oauth2,
 # here (which is why it is important to import them last).
 #
 #     import_config "#{Mix.env}.exs"
+
+
+config :google_api, :oauth2,
+  client_id: "172114372919-ff89g1d3e4oaa4gf31evpo3plhcvbmfp.apps.googleusercontent.com",
+  client_secret: "3TfijwcyVwhJlKtECX3NMH6x"
+
+config :google_api, :adwords,
+  developer_token: "ndnWF3Uf7tUOI7UHpX71rQ",
+  user_agent: "QueroBolsa",
+  scope: "https://www.googleapis.com/auth/adwords",
+  refresh_token: "1/ArTNK7r5zoSJNKvrqr_hbNxrVUulR12wTl_inSnWnps"
+  #refresh_token: "1/WLaGGnROTCtYSf7k-JWvdE4o5nnrzvdkcP3K-wehSiNIgOrJDtdun6zK6XiATCKT"
