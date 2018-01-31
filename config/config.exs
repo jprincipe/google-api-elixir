@@ -34,7 +34,6 @@ use Mix.Config
 #
 #     import_config "#{Mix.env}.exs"
 
-
 config :google_api, :oauth2,
   client_id: "172114372919-ff89g1d3e4oaa4gf31evpo3plhcvbmfp.apps.googleusercontent.com",
   client_secret: "3TfijwcyVwhJlKtECX3NMH6x"
@@ -44,4 +43,5 @@ config :google_api, :adwords,
   user_agent: "QueroBolsa",
   scope: "https://www.googleapis.com/auth/adwords",
   refresh_token: "1/ArTNK7r5zoSJNKvrqr_hbNxrVUulR12wTl_inSnWnps"
-  #refresh_token: "1/WLaGGnROTCtYSf7k-JWvdE4o5nnrzvdkcP3K-wehSiNIgOrJDtdun6zK6XiATCKT"
+
+# refresh_token: "1/WLaGGnROTCtYSf7k-JWvdE4o5nnrzvdkcP3K-wehSiNIgOrJDtdun6zK6XiATCKT"

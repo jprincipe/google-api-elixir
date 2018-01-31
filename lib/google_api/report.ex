@@ -4,16 +4,17 @@ defmodule GoogleApi.Report do
   def csv_report_with_awql(client, access_token, query) do
     {:ok, pid} = StringIO.open(report_with_awql(client, access_token, query, "CSV").body)
 
-    IO.stream(pid, :line) |>
-    CSV.parse_stream
+    IO.stream(pid, :line)
+    |> CSV.parse_stream()
   end
 
-
   def report_with_awql(client, access_token, query, format) do
-    body = [
-      __rdquery: query,
-      __fmt: format
-    ] |> URI.encode_query
+    body =
+      [
+        __rdquery: query,
+        __fmt: format
+      ]
+      |> URI.encode_query()
 
     headers = [
       {"Content-Type", "application/x-www-form-urlencoded"},
@@ -23,7 +24,7 @@ defmodule GoogleApi.Report do
       {"developerToken", client.developer_token},
       {"skipReportHeader", "true"},
       {"skipReportSummary", "true"},
-      {"skipColumnHeader", "true"},
+      {"skipColumnHeader", "true"}
     ]
 
     options = [
@@ -32,5 +33,4 @@ defmodule GoogleApi.Report do
 
     HTTPoison.post!(client.report_url, body, headers, options)
   end
-
 end

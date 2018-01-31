@@ -1,13 +1,12 @@
 defmodule GoogleApi.Adwords do
-
   def client(client_customer_id, version \\ "v201710") do
     %GoogleApi.AdwordsClient{
-      client_customer_id:   client_customer_id,
-      client_id:            Application.get_env(:google_api, :oauth2)[:client_id],
-      client_secret:        Application.get_env(:google_api, :oauth2)[:client_secret],
-      developer_token:      Application.get_env(:google_api, :adwords)[:developer_token],
-      user_agent:           Application.get_env(:google_api, :adwords)[:user_agent],
-      report_url:           "https://adwords.google.com/api/adwords/reportdownload/#{version}"
+      client_customer_id: client_customer_id,
+      client_id: Application.get_env(:google_api, :oauth2)[:client_id],
+      client_secret: Application.get_env(:google_api, :oauth2)[:client_secret],
+      developer_token: Application.get_env(:google_api, :adwords)[:developer_token],
+      user_agent: Application.get_env(:google_api, :adwords)[:user_agent],
+      report_url: "https://adwords.google.com/api/adwords/reportdownload/#{version}"
     }
   end
 
@@ -18,5 +17,4 @@ defmodule GoogleApi.Adwords do
   defp access_token do
     GoogleApi.Auth.get_token(:adwords)
   end
-
 end

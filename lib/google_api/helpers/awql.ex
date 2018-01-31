@@ -1,5 +1,4 @@
 defmodule GoogleApi.AwqlHelper do
-
   @doc """
   Format a Date to AWQL Format
 

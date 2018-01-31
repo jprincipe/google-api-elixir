@@ -2,12 +2,14 @@ defmodule GoogleApi.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :google_api,
-     version: "0.1.0",
-     elixir: "~> 1.4",
-     build_embedded: Mix.env == :prod,
-     start_permanent: Mix.env == :prod,
-     deps: deps()]
+    [
+      app: :google_api,
+      version: "0.1.0",
+      elixir: "~> 1.4",
+      build_embedded: Mix.env() == :prod,
+      start_permanent: Mix.env() == :prod,
+      deps: deps()
+    ]
   end
 
   # Configuration for the OTP application
@@ -27,9 +29,11 @@ defmodule GoogleApi.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    [{:oauth2, "~> 0.9"},
-     {:poison, "~> 2.0"},
-     {:httpoison, "~> 0.9"},
-     {:nimble_csv, "~> 0.1.0"}]
+    [
+      {:oauth2, "~> 0.9"},
+      {:poison, "~> 2.0"},
+      {:httpoison, "~> 0.9"},
+      {:nimble_csv, "~> 0.1.0"}
+    ]
   end
 end
